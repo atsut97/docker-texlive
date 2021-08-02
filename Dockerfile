@@ -11,19 +11,18 @@ ARG CTAN_HOST="https://mirror.ctan.org"
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
     ca-certificates \
-    dbus-x11 \
     ghostscript \
     git \
     inkscape \
     libpaper-utils \
     make \
-    pstoedit \
     sensible-utils \
     texlive-binaries \
     ucf \
     wget \
     xdg-utils \
     xzdec \
+    && mkdir -p /usr/share/inkscape/fonts \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy the profile file to perform the installation.
